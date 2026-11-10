@@ -1,0 +1,915 @@
+/* Переменные сайта */
+:root {
+    --text-dark: #2c2a29;
+    --text-muted: #777777;
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+}
+
+/* Сброс стандартных отступов */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--text-dark);
+    background-color: #6E9A6E; /* Светлый фон для нижней части сайта при скролле */
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================================
+   HERO (Первый экран)*/
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    color: #C5D28C;
+    padding: 2rem 5%;
+    overflow: hidden; /* Скрывает всё, что выходит за границы экрана */
+}
+
+/* Картинка на фоне из HTML */
+.hero-bg-img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Растягивает картинку пропорционально на весь экран */
+    z-index: -1; /* Отправляет картинку на самый задний план */
+}
+
+/* Затемнение поверх картинки для читаемости текста */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Полупрозрачный темный фильтр */
+    z-index: 2; /* Ложится поверх картинки */
+}
+
+/* Поднимаем навигацию, текст и кнопку скролла НА ПЕРЕДНИЙ ПЛАН (выше картинки) */
+.nav, .hero__content, .scroll {
+    position: relative;
+    z-index: 3;
+}
+
+/* Навигация (Шапка) */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.nav__links {
+    display: flex;
+    gap: 2.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav__links a {
+    transition: opacity 0.2s;
+}
+
+.nav__links a:hover {
+    opacity: 0.7;
+}
+
+.social a {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: opacity 0.2s;
+}
+
+.social a:hover {
+    opacity: 0.7;
+}
+
+/* Центральный текст Hero */
+.hero__content {
+    text-align: center;
+    max-width: 700px;
+    margin: auto 0;
+}
+
+.hero__content h1 {
+    font-family: var(--font-serif);
+    font-weight: 400;
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.hero-quote {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #C5D28C;
+    text-shadow: #C5D28C 0 0 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.hero-desc {
+    font-size: 1rem;
+    color: #C5D28C;
+    line-height: 1.6;
+}
+
+/* Кнопка прокрутки вниз */
+.scroll {
+    position: absolute;
+    bottom: 175px; /* Было 35px — увеличивайте это число, чтобы поднять стрелку еще выше */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #C5D28C;
+    opacity: 0.8;
+    z-index: 5;
+    transition: opacity 0.2s;
+}
+
+.scroll:hover {
+    opacity: 1;
+}
+/* Белая изогнутая «горка» внизу первого экрана */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    left: -8%; 
+    right: -8%; 
+    bottom: -1px;
+    height: 110px;
+    background: #4B5421;
+    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    z-index: 4;
+}
+
+
+/* Зелёный фон на ВСЮ ширину экрана */
+.section {
+    overflow: hidden;
+    position: relative;
+    background-color: #4B5421;
+    z-index: 10;
+    padding-top: 60px;
+    padding-bottom: 140px;
+    width: 100%;
+}
+
+/* Контейнер: по центру страницы */
+.container {
+  max-width: 1056px;
+  margin: 0 auto;        /* auto слева и справа = по центру */
+  padding: 0 20px;
+}
+
+/* Сетка карточек: 4 колонки */
+.locations {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 40px;
+}
+
+/* Сама карточка места */
+.loc {
+  position: relative;
+  display: flex;
+  align-items: flex-end;       /* подпись внизу */
+  aspect-ratio: 252 / 155;
+  border-radius: 6px;
+  overflow: hidden;
+  color: #fff;                 /* белый текст */
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #9aa58a;   /* цвет, пока нет картинки */
+  background-size: cover;
+  background-position: center;
+}
+
+/* Тёмная полоса внизу, чтобы подпись читалась */
+.loc::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(0, 0, 0, 0.5));
+}
+
+.loc span {
+  position: relative;
+  padding: 0 14px 12px;
+}
+
+/* Картинки для каждой карточки */
+.loc--florence     { background-image: url("images/florence.jpg"); }
+.loc--sangimignano { background-image: url("images/san-gamignano.jpg"); }
+.loc--volterra     { background-image: url("images/volterra.jpg"); }
+.loc--chianti      { background-image: url("images/chianti.jpg"); }
+.loc--valdorcia    { background-image: url("images/val-dorcia.jpg"); }
+.loc--siena        { background-image: url("images/siena.jpg"); }
+.loc--lucca        { background-image: url("images/lucca.jpg"); }
+
+/* Зелёная карточка «Browse more» */
+.loc--more { background-color: #55604a; }
+.loc--more::before { display: none; }
+.loc__arrow { position: absolute; top: 14px; right: 14px; width: 18px; height: 18px; }
+.title, .subtitle { text-align: center; }
+
+.loc--florence     { background-image: url("imp.jpg"); }
+.loc--sangimignano { background-image: url("wtr.jpg"); }
+.loc--volterra     { background-image: url("wwp.jpg"); }
+.loc--chianti      { background-image: url("tpf.jpg"); }
+.loc--valdorcia    { background-image: url("rcs.jpg"); }
+.loc--siena        { background-image: url("tjb.jpg"); }
+.loc--lucca        { background-image: url("gsl.jpg"); }
+/* Стили для заголовка Locations */
+.section .title {
+    font-family: var(--font-serif); /* Можно сменить на var(--font-sans) или другой шрифт */
+    font-size: 36px;                 /* Размер шрифта (можете настроить под себя) */
+    font-weight: 600; 
+    color: #C5D28C ;               /* Толщина шрифта */
+}
+.subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-style: italic;
+    color: #D7BCAB;
+    text-shadow: #C5D28C 0 0 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;}
+
+.click {
+    text-align: center;      /* Выравнивает текст строго по центру */
+    margin-top: 30px;        /* Отступ сверху от карточек до надписи */
+    color: #D7BCAB;          /* Тот самый красивый зелёноватый/светлый оттенок */
+    font-size: 1.3rem;         /* Размер текста */
+    font-family: 'Lora', serif ; /* Тот же шрифт, что у подзаголовка */
+    font-style: italic;      /* Курсив (если хочется) */
+}
+.loc span {
+    position: relative;
+    padding: 0 14px 12px;
+
+    font-family: 'Lora', serif;   /* шрифт */
+    color: #F4F1C9;               /* цвет текста */
+    font-size: 16px;              /* размер */
+    font-weight: 500;             /* толщина */
+    font-style: italic;           /* курсив, если нужен */
+}
+.star {
+  position: absolute;          /* ставим куда угодно внутри блока */
+  color: #D7BCAB;
+  line-height: 1;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);   /* свечение */
+  pointer-events: none;        /* звезда не мешает кликам */
+}
+.star--1 { top: 90px;    left: 12%;  font-size: 40px; }
+.star--2 { top: 45%;     right: 8%;  font-size: 28px; }
+.star--3 { bottom: 70px; left: 20%;  font-size: 22px; }
+
+.lines {
+  position: absolute;
+  inset: 0;                    /* на весь блок */
+  width: 100%;
+  height: 100%;
+  fill: none;                  /* без заливки, только линия */
+  stroke: #C5D28C;
+  stroke-width: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.lines path { vector-effect: non-scaling-stroke; }   /* линия не утолщается при растягивании */
+
+/* ===== FEATURED ===== */
+
+/* Белый фон на всю ширину страницы */
+.featured {
+  position: relative;      /* добавьте */
+  z-index: 10;             /* добавьте */
+  background: #4B5421;
+  padding: 60px 20px;
+}
+
+/* Содержимое по центру, не шире 1056px */
+.featured-box {
+  max-width: 1056px;
+  margin: 0 auto;
+  background: none;
+}
+
+/* Надпись «Featured venues» */
+.featured-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #F4F1C9;
+  margin-bottom: 14px;
+}
+
+/* Карточка: картинка и текст в один ряд */
+.featured-card {
+  background: #F4F1C9;
+  display: flex;
+  min-height: 470px;
+  border-radius: 8px;
+  overflow: hidden;                              /* скругляет углы у картинки */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);     /* лёгкая тень */
+}
+
+/* Картинка слева: треть ширины, на всю высоту */
+.featured-card img {
+  width: 35%;
+  object-fit: cover;
+}
+
+/* Текст справа */
+.featured-text {
+  color: #54707D;
+  flex: 1;
+  padding: 90px 50px 50px;
+}
+
+.featured-text h4 {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: #54707D;
+  margin-bottom: 6px;
+}
+
+.featured-place {
+  font-size: 14px;
+  color: #54707D;
+}
+
+.featured-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #54707D;
+  margin-bottom: 24px;
+}
+
+.featured-text a {
+  font-weight: 600;
+  color: #54707D;
+}
+.featured-title {
+  text-align: center;            /* по центру */
+  font-size: 40px;               /* побольше */
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: #F4F1C9;                /* светлый цвет на зелёном фоне */
+  margin-bottom: 30px;           /* отступ до карточки */
+}
+.facts {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #c9c6a8;      /* тонкая линия сверху */
+}
+.facts b {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: 28px;
+  color: #4a4f3e;
+}
+.facts span {
+  font-size: 13px;
+  color: #8e9187;
+}
+/* ===== ЦВЕТЫ ===== */
+
+/* Секции, в которых стоят цветы: нужны, чтобы цветы не вылезали за края */
+.section,
+.featured {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Общие настройки для всех цветов */
+.star {
+  position: absolute;                 /* ставим куда угодно внутри блока */
+  line-height: 1;
+  color: #F4F1C9;                     /* светлый цвет для символов ✿ ❀ */
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);   /* свечение */
+  pointer-events: none;               /* цветы не мешают нажимать на карточки */
+  z-index: 1;
+  animation: sway 4s ease-in-out infinite;          /* покачивание */
+}
+
+/* Покачивание: влево, потом вправо */
+@keyframes sway {
+  0%, 100% { transform: rotate(-8deg); }
+  50%      { transform: rotate(8deg); }
+}
+
+/* ----- Цветы в галерее ----- */
+.star--1 { top: 90px;    left: 12%;  font-size: 44px; }
+.star--2 { top: 45%;     right: 8%;  font-size: 30px; animation-delay: 1s; }
+.star--3 { bottom: 70px; left: 20%;  font-size: 36px; animation-delay: 2s; }
+
+/* ----- Цветы в блоке Biography ----- */
+.star--4 { top: 50px;    right: 12%; font-size: 40px; animation-delay: 0.5s; }
+.star--5 { bottom: 40px; left: 8%;   font-size: 32px; animation-delay: 1.5s; }
+.social {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+#music-btn {
+  background: none;
+  border: 1px solid currentColor;
+  border-radius: 20px;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  padding: 4px 14px;
+  cursor: pointer;
+}
+
+#music-btn:hover {
+  opacity: 0.7;
+}
+/* ===== ОБЩЕЕ ДЛЯ ТРЁХ БЛОКОВ ===== */
+/* Поднимает блоки над фоном страницы (из-за этого раньше блок не был виден) */
+.services-section,
+.pf-section,
+.test-section {
+  position: relative;
+  z-index: 10;
+}
+
+/* ===== SERVICES ===== */
+.services-section {
+  background: #4B5421;
+  padding: 80px 20px 100px;
+}
+
+/* Серая панель: заголовок слева, карточки справа */
+.svc-box {
+  display: flex;                /* ставит элементы в ряд */
+  align-items: flex-start;      /* карточки не растягиваются по высоте панели */
+  gap: 40px;
+  max-width: 1056px;
+  height: 280px;                /* карточки выше панели, поэтому они выступают вниз */
+  margin: 0 auto;          /* снизу место под выступающие карточки */
+  padding: 40px;
+  background: #D7BCAB;
+  border-radius: 8px;
+}
+
+.svc-title {
+  width: 250px;
+}
+.svc-title h2 {
+  font-family: var(--font-serif);
+  font-size: 23px;
+  color: #4B5421;
+}
+.svc-title p {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #4B5421;
+}
+
+/* Три карточки в ряд */
+.svc-cards {
+  flex: 1;                      /* занимает всё оставшееся место */
+  display: flex;
+  gap: 20px;
+}
+.svc-card {
+  flex: 1;                      /* три карточки одинаковой ширины */
+  padding: 10px;
+  background: #F4F1C9;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.svc-card img {
+  width: 100%;
+  height: 210px;
+  object-fit: cover;            /* фото не растягивается */
+  border-radius: 6px;
+  background: #D7BCAB;          /* цвет, пока нет фото */
+}
+.svc-card p {
+  margin: 16px 0 8px;
+  font-family: var(--font-serif);
+  color: #4B5421;
+}
+
+/* ===== OUR PORTFOLIOS ===== */
+.pf-section {
+  background: #4B5421;
+  padding: 0 20px 100px;
+}
+.pf-section h3{
+    font-family: var(--font-serif);
+    color: #F4F1C9 ;
+}
+.pf-box {
+  max-width: 1056px;
+  margin: 0 auto;
+}
+.pf-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #8e9187;
+  margin-bottom: 14px;
+}
+
+/* Две колонки */
+.pf-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Карточка: текст прижат вниз и стоит по центру */
+.pf-card {
+  display: flex;
+  flex-direction: column;       /* текст один под другим */
+  justify-content: flex-end;    /* прижать вниз */
+  align-items: center;          /* по центру */
+  height: 300px;
+  padding-bottom: 22px;
+  border-radius: 8px;
+  color: white;
+  background-size: cover;
+  background-position: center;
+  background-color: #8a8f7a;    /* цвет, пока нет фото */
+}
+.pf-card small {
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.pf-card b {
+  font-family: var(--font-serif);
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* Фото для каждой карточки + тёмная полоса снизу, чтобы текст читался */
+.pf-1 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("mmm.jpg"); }
+.pf-2 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("mdo.jpg"); }
+.pf-3 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("mdlo.jpg"); }
+.pf-4 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("fcm.jpg"); }
+
+/* ===== TESTIMONIALS ===== */
+.test-section {
+  background: #D7BCAB;
+  color: white;
+  text-align: center;
+  padding: 70px 20px 60px;
+}
+.test-section h2 {
+  font-family: var(--font-serif);
+  font-size: 36px;
+  color: #4B5421;
+}
+.test-sub {
+  margin-top: 8px;
+  color: #4B5421;
+}
+
+/* В один ряд: стрелка, кавычка, текст, кавычка, стрелка */
+.test-slider {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1056px;
+  margin: 50px auto 0;
+}
+.test-arrow {
+  font-size: 26px;
+  color: #4B5421;
+}
+.quote {
+  font-family: var(--font-serif);
+  font-size: 90px;
+  color: #E8D7A9;
+}
+.test-text {
+  flex: 1;                      /* текст занимает всё место между кавычками */
+  line-height: 1.8;
+  color: #4B5421;
+}
+.test-text p {
+  margin-bottom: 24px;
+}
+
+/* Круглая картинка */
+.test-avatar {
+  width: 200px;
+  height: 150px;
+  margin: 30px auto 8px;
+  border-radius: 50%;           /* делает круг */
+  object-fit: cover;
+  border: 2px solid white;
+  background: #ccc;
+}
+
+/* Секция держит лилию и обрезает всё, что вылезает за края */
+/* Секция держит лилию и обрезает всё, что вылезает за края */
+.services-section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Панель с карточками лежит над лилией */
+.svc-box {
+  position: relative;
+  z-index: 1;
+}
+
+/* Лилия: просто картинка, ничего не закрашиваем */
+.lily {
+  position: absolute;
+  top: 40px;                 /* выше или ниже */
+  left: 10px;                /* ближе или дальше от края */
+  width: 300px;              /* размер */
+  z-index: 0;
+  pointer-events: none;      /* не мешает кликам */
+  transform: rotate(-12deg); /* наклон */
+  animation: sway 6s ease-in-out infinite alternate;   /* покачивание */
+}
+
+/* Покачивание: от -16 до -8 градусов вокруг наклона */
+@keyframes sway {
+  from { transform: rotate(-16deg); }
+  to   { transform: rotate(-8deg); }
+}
+.lily-right {
+  left: auto;
+  right: 20px;
+  transform: rotate(12deg);
+  animation-name: sway-right;
+}
+
+@keyframes sway-right {
+  from { transform: rotate(8deg); }
+  to   { transform: rotate(16deg); }
+}
+
+.liness {
+  position: absolute;
+  inset: 0;                    /* на весь блок */
+  width: 100%;
+  height: 100%;
+  fill: none;                  /* без заливки, только линия */
+  stroke: #D7BCAB;
+  stroke-width: 1;
+  opacity: 0.5;
+  pointer-events: none;
+}
+.lines path { vector-effect: non-scaling-stroke; }   /* линия не утолщается при растягивании */
+
+/* ===== REVIEWS ===== */
+.reviews-section {
+  position: relative;
+  z-index: 10;               /* блок над фоном страницы */
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.reviews-section h2 {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: #C5D28C;
+}
+
+/* Форма: кремовая карточка по центру */
+.review-form {
+  max-width: 600px;
+  margin: 40px auto 0;
+  padding: 30px;
+  background: #f3efd6;
+  color: #4a4f3e;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.review-form label {
+  display: block;
+  margin-top: 16px;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  font: inherit;
+}
+
+.review-form button {
+  margin-top: 24px;
+  padding: 10px 40px;
+  background: #485421;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Звёзды рейтинга */
+.stars {
+  display: flex;
+  flex-direction: row-reverse;     /* слева 1, справа 5 */
+  justify-content: flex-end;
+}
+
+.stars input {
+  display: none;                   /* прячем кружки */
+}
+
+.stars label {
+  margin: 0;
+  font-size: 36px;
+  color: #c9c6a8;                  /* серые, пока не выбраны */
+  cursor: pointer;
+}
+
+/* Звезда и все звёзды слева от неё становятся жёлтыми */
+.stars label:hover,
+.stars label:hover ~ label,
+.stars input:checked ~ label {
+  color: #e0a800;
+}
+
+/* Карточки отзывов */
+.review-list {
+  max-width: 600px;
+  margin: 40px auto 0;
+  text-align: left;
+}
+
+.review-card {
+  padding: 20px;
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.review-card p {
+  margin-top: 8px;
+}
+
+.review-stars {
+  color: #f4d35e;            /* жёлтые звёзды */
+}
+
+/* Основной контейнер футера — на прозрачном фоне */
+.site-footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin-top: 200px !important;
+    background: transparent;
+    box-sizing: border-box;
+}
+
+/* Белая рамка посередине */
+.footer-frame {
+    max-width: 650px;
+    width: 100%;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+    text-align: center;
+    color: #ffffff;
+    font-family: inherit;
+}
+
+/* Название / раздел */
+.footer-title {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin: 0 0 10px 0;
+    text-transform: uppercase;
+}
+
+/* Текст авторских прав */
+.footer-text {
+    font-size: 14px;
+    opacity: 0.8;
+    margin: 0 0 8px 0;
+}
+
+/* Строка с музыкой */
+.footer-music {
+    font-size: 13px;
+    opacity: 0.7;
+    margin: 0 0 15px 0;
+}
+
+/* Ссылка на автора песни */
+.footer-link {
+    color: #ffffff;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+    opacity: 1;
+    color: #f4d35e; /* Приятный акцентный цвет при наведении */
+}
+
+/* Нижняя строка: Simply lovely и подпись */
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 12px;
+    margin-top: 12px;
+}
+
+.simply-lovely {
+    font-style: italic;
+    letter-spacing: 0.5px;
+}
+
+.footer-author {
+    opacity: 0.6;
+    font-size: 13px;
+}
+
+
+.site-footer {
+  position: relative;
+  z-index: 10;
+}
+
+.footer-frame {
+  background: rgba(0, 0, 0, 0.55);
+}
+a.pf-card {
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-end; 
+    text-decoration: none;
+    color: white; 
+    box-sizing: border-box;
+}
+.ig-link { 
+    display: inline-flex; 
+    align-items: center; 
+    gap: 6px;  
+}
+.ig-icon { 
+    width: 23px; 
+    object-fit: contain; 
+}

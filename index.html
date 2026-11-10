@@ -1,0 +1,296 @@
+<!-- Шапка и первый экран с картинкой на фоне через HTML -->
+    <!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Monet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="monetsh.css">
+</head>
+<body>
+    <header class="hero">
+        <!-- Сама картинка, которая будет фоном -->
+        <img src="monet-hero.jpg" alt="Claude Monet" class="hero-bg-img">
+
+        <nav class="nav">
+            <div class="logo">MONET</div>
+            <ul class="nav__links">
+                <li><a href="#locations">Gallery</a></li>
+                <li><a href="#biography">Biography</a></li>
+                <li><a href="#musee">Art Museums</a></li>
+                <li><a href="#nnnn">Giverny Garden</a></li>
+                <li><a href="#rrrr">Reviews</a></li>
+            </ul>
+            <div class="social">
+  <a href="https://www.instagram.com/claudemonet__/" target="_blank" class="ig-link">
+    <img src="icon.png" alt="Instagram" class="ig-icon">
+    <span></span>
+</a>
+  <button id="music-btn">♪ Music</button>
+</div>
+        </nav>
+
+        <div class="hero__content">
+            <h1>Claude Monet</h1>
+            <p class="hero-quote">«I must have flowers, always and always.»</p>
+            <p class="hero-desc">Capturing the poetry of nature through the lens of light. Explore the life and masterpieces of the father of Impressionism.</p>
+        </div>
+
+        <a href="#locations" class="scroll">↓ Scroll</a>
+    </header>
+
+    <!-- ---------- gallery --------- -->
+<section class="section" id="locations"> 
+<span class="star star--1">✦</span>
+<span class="star star--2">✦</span>
+<span class="star star--3">✦</span>
+
+<svg class="lines" viewBox="0 0 1440 600" preserveAspectRatio="none">
+  <!-- верхняя линия: высоко, над Gallery -->
+  <path d="M-20 45 C 250 10, 600 70, 1000 25 S 1350 10, 1460 40"/>
+  <!-- нижняя линия: низко, под click each painting -->
+  <path d="M-20 585 C 300 545, 600 590, 900 560 S 1300 540, 1460 580"/>
+</svg>
+
+  <div class="container">                   
+    <h2 class="title">Gallery</h2>
+    <p class="subtitle">that you will remember forever</p>
+
+    <div class="locations">
+        <a href="https://en.wikipedia.org/wiki/Impression,_Sunrise" target="_blank" class="loc loc--florence"><span>Impression, Sunrise</span></a>
+        <a href="https://en.wikipedia.org/wiki/Water_Lilies_(Monet_series)" target="_blank" class="loc loc--sangimignano"><span>Water Lilies</span></a>
+        <a href="https://en.wikipedia.org/wiki/Woman_with_a_Parasol_%E2%80%93_Madame_Monet_and_Her_Son" target="_blank" class="loc loc--volterra"><span>Woman with a Parasol</span></a>
+        <a href="https://en.wikipedia.org/wiki/The_Poppy_Field_near_Argenteuil" target="_blank"class="loc loc--chianti"><span>The Poppy Field near Argenteuil</span></a>
+        <a href="https://en.wikipedia.org/wiki/Rouen_Cathedral_(Monet_series)" class="loc loc--valdorcia"><span>Rouen Cathedral Series</span></a>
+        <a href="https://simple.wikipedia.org/wiki/Japanese_Footbridge" target="_blank" class="loc loc--siena"><span>The Japanese Footbridge</span></a>
+        <a href="https://en.wikipedia.org/wiki/Gare_Saint-Lazare_(Monet_series)" target="_blank" class="loc loc--lucca"><span>Gare Saint-Lazare</span></a>
+        <a href="https://en.wikipedia.org/wiki/List_of_paintings_by_Claude_Monet" target="_blank" class="loc loc--more">
+            <svg class="loc__arrow" viewBox="0 0 24 24"><path d="M7 17L17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Browse more</span>
+        </a>
+
+    </div>
+    <p class="click">click each painting to explore</p>
+</div>
+</section>
+<!-- ===== FEATURED ===== -->
+<section class="featured" id="biography">
+    <span class="star star--1">✿</span>
+<span class="star star--2">❀</span>
+<span class="star star--3"> </span>
+<span class="star star--4">✦</span>
+<span class="star star--5">✦</span>
+  <div class="featured-box">
+
+    <h3 class="featured-title">Biography</h3>
+
+    <div class="featured-card">
+      <img src="monett.jpg" alt="Villa Balbianello">
+
+      <div class="featured-text">
+        <h4>OSCAR-CLAUDE MONET</h4>
+        <p class="featured-place">(1840-1926)</p>
+
+        <p>Born in Paris in 1840, Claude Monet transformed the art world by abandoning traditional studio rules. Instead, he stepped outdoors with his easel to capture something far more elusive: the fleeting dance of light, wind, and shadow across nature.</p>
+
+        <p>From his early days along the windswept coasts of Normandy to his peaceful later years surrounded by water lilies in Giverny, Monet dedicated every breath to capturing the essence of a single moment before it faded away… <a href="https://www.claudemonetgallery.org/biography.html">View more</a></p>
+        <div class="facts">
+  <div><b>1840</b><span>Born in Paris</span></div>
+  <div><b>1872</b><span>Impression, Sunrise</span></div>
+  <div><b>1926</b><span>Died in Giverny</span></div>
+</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+</section>
+
+  <!-- Музыка ai helped with js -->
+  <audio id="music" loop src="music.mp3"></audio>
+
+    <script>
+    var music = document.getElementById("music");
+    var btn = document.getElementById("music-btn");
+
+    // Нажали на кнопку: включить или поставить на паузу
+    btn.onclick = function () {
+      if (music.paused) {
+        music.play();
+      } else {
+        music.pause();
+      }
+    };
+
+    // Надпись на кнопке меняется сама
+    music.onplay = function () { btn.textContent = "♪ On"; };
+    music.onpause = function () { btn.textContent = "♪ Off"; };
+
+    // Если браузер не разрешил автозапуск, музыка включится при первом действии
+    music.play().catch(function () {
+      function start() {
+        music.play();
+        document.removeEventListener("click", start);
+        document.removeEventListener("keydown", start);
+        document.removeEventListener("touchstart", start);
+      }
+      document.addEventListener("click", start);
+      document.addEventListener("keydown", start);
+      document.addEventListener("touchstart", start);
+    });
+  </script>
+<!-- ===== SERVICES ===== -->
+<section class="services-section">
+    <img class="lily lily-left" src="fl.png" alt="">
+    <img class="lily lily-right" src="fll.png" alt="">
+    <svg class="liness" viewBox="0 0 1440 600" preserveAspectRatio="none">
+  <!-- верхняя линия: высоко, над Gallery -->
+  <path d="M-20 45 C 250 10, 600 70, 1000 25 S 1350 10, 1460 40"/>
+  <!-- нижняя линия: низко, под click each painting -->
+  <path d="M-20 585 C 300 545, 600 590, 900 560 S 1300 540, 1460 580"/>
+</svg>
+  <div class="svc-box">
+   
+    <div class="svc-title">
+      <h2>The Essence of Monet's Art</h2>
+      <p>Monet captured the essence of nature by chasing the fleeting shifts of light, water, and color across his iconic series.</p>
+    </div>
+
+    <div class="svc-cards">
+      <div class="svc-card">
+        <img src="nature.jpg" alt="">
+        <p>Light & Atmosphere</p>
+      </div>
+      <div class="svc-card">
+        <img src="wtrl.jpg" alt="">
+        <p>Water Lilies</p>
+      </div>
+      <div class="svc-card">
+        <img src="garden.jpg" alt="">
+        <p>Nature & Gardens</p>
+      </div>
+    </div>
+
+  </div>
+ 
+
+</section>
+
+<!-- ===== OUR PORTFOLIOS ===== -->
+<section class="pf-section" id="musee">
+  <div class="pf-box">
+    <h3 class="pf-title">Find Monet's Art Here (click) : </h3>
+
+    <div class="pf-grid">
+      <a href="https://www.marmottan.fr/en/" class="pf-card pf-1" target="_blank">
+  <small>PARIS, FRANCE</small>
+  <b>Musée Marmottan Monet</b>
+</a>
+<a href="https://www.musee-orsay.fr/en" class="pf-card pf-2" target="_blank">
+  <small>PARIS, FRANCE</small>
+  <b>Musée d'Orsay</b>
+</a>
+<a href="https://www.musee-orangerie.fr/en" class="pf-card pf-3" target="_blank">
+  <small>PARIS, FRANCE</small>
+  <b>Musée de l'Orangerie</b>
+</a>
+<a href="https://claudemonetgiverny.fr/en/" class="pf-card pf-4" target="_blank">
+  <small>GIVERNY, FRANCE</small>
+  <b>Fondation Claude Monet</b>
+</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="test-section" id="nnnn">
+  <h2>Giverny Garden</h2>
+  <p class="test-sub">Where Art Meets Nature in Normandy</p>
+
+  <div class="test-slider">
+    <span class="quote">“</span>
+
+    <div class="test-text">
+      <p>In 1883, the legendary French painter Claude Monet stepped off a local train in the small village of Giverny, located about 75 kilometers west of Paris. Struck by the picturesque landscapes and the tranquil beauty of the Normandy countryside, he rented a house with a vast orchard and decided to make it his permanent home, creating a stunning estate with a vibrant flower garden and a Japanese-inspired water garden featuring the famous green bridge and water lilies. </p>
+      <p>Today, the Fondation Claude Monet preserves this historic home for visitors worldwide.</p>
+    </div>
+
+    <span class="quote">”</span>
+  </div>
+
+  <img class="test-avatar" src="giverny.jpg" alt="">
+  <p>________________</p>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews-section" id="rrrr">
+  <h2>Reviews</h2>
+  <p>share your impression of Monet's art</p>
+
+  <form id="review-form" class="review-form">
+
+    <label>Your name:</label>
+    <input type="text" id="rv-name" required>
+
+    <label>Art you chose:</label>
+    <select id="rv-art-select" required onchange="checkOther(this)">
+      <option value="">— choose a painting —</option>
+      <option value="Impression, Sunrise">Impression, Sunrise</option>
+      <option value="Water Lilies">Water Lilies</option>
+      <option value="Woman with a Parasol">Woman with a Parasol</option>
+      <option value="The Poppy Field near Argenteuil">The Poppy Field near Argenteuil</option>
+      <option value="Rouen Cathedral Series">Rouen Cathedral Series</option>
+      <option value="The Japanese Footbridge">The Japanese Footbridge</option>
+      <option value="Gare Saint-Lazare">Gare Saint-Lazare</option>
+      <option value="other">Other</option>
+    </select>
+
+    <!-- Skrytoe pole dlya svoego varianta, poyavlyaetsya tolko pri vybore Other -->
+    <div id="other-container" style="display: none; margin-top: 10px;">
+      <input type="text" id="rv-art-custom" placeholder="Type your painting name...">
+    </div>
+
+    <label>Your rating out of 5:</label>
+    <!-- Звёзды: порядок от 5 к 1, CSS разворачивает их слева направо -->
+    <div class="stars">
+      <input type="radio" name="rating" value="5" id="star5"><label for="star5">★</label>
+      <input type="radio" name="rating" value="4" id="star4"><label for="star4">★</label>
+      <input type="radio" name="rating" value="3" id="star3"><label for="star3">★</label>
+      <input type="radio" name="rating" value="2" id="star2"><label for="star2">★</label>
+      <input type="radio" name="rating" value="1" id="star1"><label for="star1">★</label>
+    </div>
+
+    <label>What emotions did it bring to you?</label>
+    <textarea id="rv-emotions" rows="4" required></textarea>
+
+    <button type="submit">Send review</button>
+    <p id="review-message"></p>
+  </form>
+
+  <!-- Сюда выводятся сохранённые отзывы -->
+  <div id="review-list" class="review-list"></div>
+</section>
+
+<!-- Firebase и наш файл с кодом отзывов -->
+  <script src="https://www.gstatic.com/firebasejs/13.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore-compat.js"></script>
+  <script src="monetsh.js"></script>
+
+<footer class="site-footer">
+    <div class="footer-frame">
+        <h3 class="footer-title">Claude Monet • Impressionism Art</h3>
+        <p class="footer-text">All rights reserved © 2026</p>
+        <p class="footer-music">
+    Background track: <em>"Idea 12"</em> by 
+    <a href="https://gibranalcocer.com/" target="_blank" class="footer-link">Gibran Alcocer</a>
+</p>
+        <div class="footer-bottom">
+            <span class="simply-lovely">simply lovely.</span>
+            <span class="footer-author">by skhnzss</span>
+        </div>
+    </div>
+</footer>
+    </body>
+</html>
