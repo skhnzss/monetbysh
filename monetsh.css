@@ -242,13 +242,6 @@ ul {
 }
 
 /* Картинки для каждой карточки */
-.loc--florence     { background-image: url("images/florence.jpg"); }
-.loc--sangimignano { background-image: url("images/san-gamignano.jpg"); }
-.loc--volterra     { background-image: url("images/volterra.jpg"); }
-.loc--chianti      { background-image: url("images/chianti.jpg"); }
-.loc--valdorcia    { background-image: url("images/val-dorcia.jpg"); }
-.loc--siena        { background-image: url("images/siena.jpg"); }
-.loc--lucca        { background-image: url("images/lucca.jpg"); }
 
 /* Зелёная карточка «Browse more» */
 .loc--more { background-color: #55604a; }
@@ -258,7 +251,7 @@ ul {
 
 .loc--florence     { background-image: url("imp.jpg"); }
 .loc--sangimignano { background-image: url("wtr.jpg"); }
-.loc--volterra     { background-image: url("wwp.jpg"); }
+.loc--volterra     { background-image: url("wwp.webp"); }
 .loc--chianti      { background-image: url("tpf.jpg"); }
 .loc--valdorcia    { background-image: url("rcs.jpg"); }
 .loc--siena        { background-image: url("tjb.jpg"); }
