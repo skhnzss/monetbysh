@@ -907,27 +907,74 @@ a.pf-card {
     object-fit: contain; 
 }
 
-/* ========================================= */
-/* PHONE (ЭКРАНЫ МЕНЬШЕ 768px) */
-/* ========================================= */
+/* =========================================================
+   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ (ЭКРАНЫ МЕНЬШЕ 768px) 
+   ========================================================= */
 @media (max-width: 768px) {
-    /* 1. Делаем так, чтобы карточки с картинами встали друг под другом, а не в ряд */
-    .loc {
-        flex-direction: column; 
-        align-items: center;
+    /* 1. Главный экран: уменьшаем огромный заголовок */
+    .hero__content h1 {
+        font-size: 2.5rem;
     }
-    
-    .loc span {
-        width: 90%; /* Карточка будет занимать почти всю ширину экрана телефона */
-        margin-bottom: 20px; /* Отступ снизу */
+    /* Прячем ссылки в шапке, чтобы они не налезали на логотип (оставляем только кнопку музыки) */
+    .nav__links {
+        display: none; 
     }
 
-    /* 2. Уменьшаем огромные шрифты, чтобы они влезали в экран */
-    .section .title {
-        font-size: 28px;
+    /* 2. Галерея: делаем 1 колонку вместо 4 */
+    .locations {
+        grid-template-columns: 1fr;
+    }
+
+    /* 3. Биография: ставим картинку сверху (на всю ширину), текст под неё */
+    .featured-card {
+        flex-direction: column;
+    }
+    .featured-card img {
+        width: 100%;
+        height: 250px;
+    }
+    .featured-text {
+        padding: 30px 20px;
+    }
+    .facts {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* 4. Секция Essence: убираем фиксированную высоту и ставим карточки друг под другом */
+    .svc-box {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    .svc-title {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .svc-cards {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* 5. Музеи: 1 колонка вместо 2 */
+    .pf-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 6. Отзывы / Giverny: текст в колонку, убираем огромные отступы */
+    .test-slider {
+        flex-direction: column;
+    }
+    .quote {
+        font-size: 50px;
+        line-height: 1;
     }
     
-    .subtitle {
-        font-size: 1rem;
+    /* 7. Подвал (Footer) */
+    .footer-bottom {
+        flex-direction: column;
+        gap: 5px;
     }
 }
