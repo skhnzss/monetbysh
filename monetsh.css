@@ -249,12 +249,12 @@ ul {
 .loc__arrow { position: absolute; top: 14px; right: 14px; width: 18px; height: 18px; }
 .title, .subtitle { text-align: center; }
 
-.loc--florence     { background-image: url("imp.jpg"); }
+.loc--florence     { background-image: url("imp.webp"); }
 .loc--sangimignano { background-image: url("wtr.jpg"); }
 .loc--volterra     { background-image: url("wwp.webp"); }
 .loc--chianti      { background-image: url("tpf.jpg"); }
 .loc--valdorcia    { background-image: url("rcs.jpg"); }
-.loc--siena        { background-image: url("tjb.jpg"); }
+.loc--siena        { background-image: url("tjb.webp"); }
 .loc--lucca        { background-image: url("gsl.jpg"); }
 /* Стили для заголовка Locations */
 .section .title {
