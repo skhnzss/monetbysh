@@ -220,7 +220,7 @@ ul {
   aspect-ratio: 252 / 155;
   border-radius: 6px;
   overflow: hidden;
-  color: #fff;                 /* белый текст */
+  color: #fff;                 
   font-size: 14px;
   font-weight: 500;
   background-color: #9aa58a;   /* цвет, пока нет картинки */
@@ -258,10 +258,10 @@ ul {
 .loc--lucca        { background-image: url("gsl.jpg"); }
 /* Стили для заголовка Locations */
 .section .title {
-    font-family: var(--font-serif); /* Можно сменить на var(--font-sans) или другой шрифт */
-    font-size: 36px;                 /* Размер шрифта (можете настроить под себя) */
+    font-family: var(--font-serif); 
+    font-size: 36px;                
     font-weight: 600; 
-    color: #C5D28C ;               /* Толщина шрифта */
+    color: #C5D28C ;        
 }
 .subtitle {
     font-family: var(--font-serif);
@@ -272,29 +272,29 @@ ul {
     margin-bottom: 1.5rem;}
 
 .click {
-    text-align: center;      /* Выравнивает текст строго по центру */
-    margin-top: 30px;        /* Отступ сверху от карточек до надписи */
-    color: #D7BCAB;          /* Тот самый красивый зелёноватый/светлый оттенок */
-    font-size: 1.3rem;         /* Размер текста */
-    font-family: 'Lora', serif ; /* Тот же шрифт, что у подзаголовка */
-    font-style: italic;      /* Курсив (если хочется) */
+    text-align: center;      
+    margin-top: 30px;        
+    color: #D7BCAB;         
+    font-size: 1.3rem;        
+    font-family: 'Lora', serif ; 
+    font-style: italic;      
 }
 .loc span {
     position: relative;
     padding: 0 14px 12px;
 
-    font-family: 'Lora', serif;   /* шрифт */
-    color: #F4F1C9;               /* цвет текста */
-    font-size: 16px;              /* размер */
-    font-weight: 500;             /* толщина */
-    font-style: italic;           /* курсив, если нужен */
+    font-family: 'Lora', serif;   
+    color: #F4F1C9;              
+    font-size: 16px;        
+    font-weight: 500;             
+    font-style: italic;           
 }
 .star {
-  position: absolute;          /* ставим куда угодно внутри блока */
+  position: absolute;         
   color: #D7BCAB;
   line-height: 1;
   text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);   /* свечение */
-  pointer-events: none;        /* звезда не мешает кликам */
+  pointer-events: none;        
 }
 .star--1 { top: 90px;    left: 12%;  font-size: 40px; }
 .star--2 { top: 45%;     right: 8%;  font-size: 28px; }
@@ -305,7 +305,7 @@ ul {
   inset: 0;                    /* на весь блок */
   width: 100%;
   height: 100%;
-  fill: none;                  /* без заливки, только линия */
+  fill: none;                  
   stroke: #C5D28C;
   stroke-width: 1;
   opacity: 0.5;
@@ -317,8 +317,8 @@ ul {
 
 /* Белый фон на всю ширину страницы */
 .featured {
-  position: relative;      /* добавьте */
-  z-index: 10;             /* добавьте */
+  position: relative;     
+  z-index: 10;             
   background: #4B5421;
   padding: 60px 20px;
 }
@@ -330,7 +330,6 @@ ul {
   background: none;
 }
 
-/* Надпись «Featured venues» */
 .featured-title {
   font-size: 18px;
   font-weight: 500;
@@ -345,7 +344,7 @@ ul {
   min-height: 470px;
   border-radius: 8px;
   overflow: hidden;                              /* скругляет углы у картинки */
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);     /* лёгкая тень */
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);     
 }
 
 /* Картинка слева: треть ширины, на всю высоту */
@@ -386,7 +385,7 @@ ul {
 }
 .featured-title {
   text-align: center;            /* по центру */
-  font-size: 40px;               /* побольше */
+  font-size: 40px;               
   font-family: var(--font-serif);
   font-weight: 600;
   color: #F4F1C9;                /* светлый цвет на зелёном фоне */
@@ -411,7 +410,6 @@ ul {
 }
 /* ===== ЦВЕТЫ ===== */
 
-/* Секции, в которых стоят цветы: нужны, чтобы цветы не вылезали за края */
 .section,
 .featured {
   position: relative;
@@ -420,10 +418,10 @@ ul {
 
 /* Общие настройки для всех цветов */
 .star {
-  position: absolute;                 /* ставим куда угодно внутри блока */
+  position: absolute;                 
   line-height: 1;
-  color: #F4F1C9;                     /* светлый цвет для символов ✿ ❀ */
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);   /* свечение */
+  color: #F4F1C9;                  
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.8);   
   pointer-events: none;               /* цветы не мешают нажимать на карточки */
   z-index: 1;
   animation: sway 4s ease-in-out infinite;          /* покачивание */
@@ -464,7 +462,7 @@ ul {
   opacity: 0.7;
 }
 /* ===== ОБЩЕЕ ДЛЯ ТРЁХ БЛОКОВ ===== */
-/* Поднимает блоки над фоном страницы (из-за этого раньше блок не был виден) */
+/* Поднимает блоки над фоном страницы */
 .services-section,
 .pf-section,
 .test-section {
@@ -481,10 +479,10 @@ ul {
 /* Серая панель: заголовок слева, карточки справа */
 .svc-box {
   display: flex;                /* ставит элементы в ряд */
-  align-items: flex-start;      /* карточки не растягиваются по высоте панели */
+  align-items: flex-start;     
   gap: 40px;
   max-width: 1056px;
-  height: 280px;                /* карточки выше панели, поэтому они выступают вниз */
+  height: 280px;             
   margin: 0 auto;          /* снизу место под выступающие карточки */
   padding: 40px;
   background: #D7BCAB;
@@ -508,12 +506,12 @@ ul {
 
 /* Три карточки в ряд */
 .svc-cards {
-  flex: 1;                      /* занимает всё оставшееся место */
+  flex: 1;                     
   display: flex;
   gap: 20px;
 }
 .svc-card {
-  flex: 1;                      /* три карточки одинаковой ширины */
+  flex: 1;                     
   padding: 10px;
   background: #F4F1C9;
   border-radius: 8px;
@@ -525,7 +523,7 @@ ul {
   height: 210px;
   object-fit: cover;            /* фото не растягивается */
   border-radius: 6px;
-  background: #D7BCAB;          /* цвет, пока нет фото */
+  background: #D7BCAB;          
 }
 .svc-card p {
   margin: 16px 0 8px;
@@ -564,15 +562,15 @@ ul {
 .pf-card {
   display: flex;
   flex-direction: column;       /* текст один под другим */
-  justify-content: flex-end;    /* прижать вниз */
-  align-items: center;          /* по центру */
+  justify-content: flex-end;    
+  align-items: center;          
   height: 300px;
   padding-bottom: 22px;
   border-radius: 8px;
   color: white;
   background-size: cover;
   background-position: center;
-  background-color: #8a8f7a;    /* цвет, пока нет фото */
+  background-color: #8a8f7a;   
 }
 .pf-card small {
   font-size: 12px;
@@ -590,7 +588,7 @@ ul {
 .pf-3 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("mdlo.jpg"); }
 .pf-4 { background-image: linear-gradient(transparent 50%, rgba(0,0,0,0.6)), url("fcm.jpg"); }
 
-/* ===== TESTIMONIALS ===== */
+/* ===== Giverny ===== */
 .test-section {
   background: #D7BCAB;
   color: white;
@@ -607,7 +605,7 @@ ul {
   color: #4B5421;
 }
 
-/* В один ряд: стрелка, кавычка, текст, кавычка, стрелка */
+/* В один ряд кавычка, текст, кавычка */
 .test-slider {
   display: flex;
   align-items: center;
@@ -645,8 +643,7 @@ ul {
   background: #ccc;
 }
 
-/* Секция держит лилию и обрезает всё, что вылезает за края */
-/* Секция держит лилию и обрезает всё, что вылезает за края */
+/*  держит лилию и обрезает всё, что вылезает за края */
 .services-section {
   position: relative;
   overflow: hidden;
@@ -658,7 +655,7 @@ ul {
   z-index: 1;
 }
 
-/* Лилия: просто картинка, ничего не закрашиваем */
+/* Лилия*/
 .lily {
   position: absolute;
   top: 40px;                 /* выше или ниже */
@@ -689,10 +686,10 @@ ul {
 
 .liness {
   position: absolute;
-  inset: 0;                    /* на весь блок */
+  inset: 0;                    
   width: 100%;
   height: 100%;
-  fill: none;                  /* без заливки, только линия */
+  fill: none;                  
   stroke: #D7BCAB;
   stroke-width: 1;
   opacity: 0.5;
@@ -715,7 +712,7 @@ ul {
   color: #C5D28C;
 }
 
-/* Форма: кремовая карточка по центру */
+/* карточка по центру */
 .review-form {
   max-width: 600px;
   margin: 40px auto 0;
@@ -764,7 +761,7 @@ ul {
 .stars label {
   margin: 0;
   font-size: 36px;
-  color: #c9c6a8;                  /* серые, пока не выбраны */
+  color: #c9c6a8;      
   cursor: pointer;
 }
 
@@ -794,7 +791,7 @@ ul {
 }
 
 .review-stars {
-  color: #f4d35e;            /* жёлтые звёзды */
+  color: #f4d35e;      
 }
 
 /* Основной контейнер футера — на прозрачном фоне */
@@ -822,7 +819,7 @@ ul {
     font-family: inherit;
 }
 
-/* Название / раздел */
+/* Название*/
 .footer-title {
     font-size: 18px;
     font-weight: 500;
@@ -858,7 +855,7 @@ ul {
     color: #f4d35e; /* Приятный акцентный цвет при наведении */
 }
 
-/* Нижняя строка: Simply lovely и подпись */
+/* Simply lovely */
 .footer-bottom {
     display: flex;
     justify-content: center;
@@ -907,9 +904,7 @@ a.pf-card {
     object-fit: contain; 
 }
 
-/* =========================================================
-   АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ (ЭКРАНЫ МЕНЬШЕ 768px) 
-   ========================================================= */
+/* АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ (ЭКРАНЫ МЕНЬШЕ 768px)  */
 @media (max-width: 768px) {
     /* 1. Главный экран: уменьшаем огромный заголовок */
     .hero__content h1 {
@@ -942,7 +937,7 @@ a.pf-card {
         text-align: center;
     }
 
-    /* 4. Секция Essence: убираем фиксированную высоту и ставим карточки друг под другом */
+    /* убираем фиксированную высоту и ставим карточки друг под другом */
     .svc-box {
         flex-direction: column;
         height: auto;
@@ -958,12 +953,12 @@ a.pf-card {
         width: 100%;
     }
 
-    /* 5. Музеи: 1 колонка вместо 2 */
+    /* Музеи: 1 колонка вместо 2 */
     .pf-grid {
         grid-template-columns: 1fr;
     }
 
-    /* 6. Отзывы / Giverny: текст в колонку, убираем огромные отступы */
+    /* Отзывы / Giverny: текст в колонку, убираем огромные отступы */
     .test-slider {
         flex-direction: column;
     }
@@ -972,7 +967,7 @@ a.pf-card {
         line-height: 1;
     }
     
-    /* 7. Подвал (Footer) */
+    /* (Footer) */
     .footer-bottom {
         flex-direction: column;
         gap: 5px;
